@@ -26,13 +26,18 @@ _DESCRIPTION = """\
 
 _KWARGS_DESCRIPTION = """\
 Args:
-    predictions: ...
-    references: ...
-    sample_weight: ...
-    multioutput: ...
-    squared: ...
+    predictions: Estimated target values.
+    references: Ground truth (correct) target values.
+    sample_weight: Sample weights.
+    multioutput: Defines aggregating of multiple output values. Array-like value defines weights used to average errors.
+        ‘raw_values’ :
+        Returns a full set of errors in case of multioutput input.
+        ‘uniform_average’ :
+        Errors of all outputs are averaged with uniform weight.
+    squared: If True returns MSE value, if False returns RMSE value.
 Returns:
-    mean_squared_error: ...
+    mean_squared_error: A non-negative floating point value (the best value is 0.0), or an array of floating point
+                        values, one for each individual target.
 """
 
 _CITATION = """\
